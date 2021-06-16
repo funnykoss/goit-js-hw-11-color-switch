@@ -23,13 +23,16 @@ stoptBtn.addEventListener('click', StopSwitchColor);
 
 
 function StartSwitchColor() {
+   
 intervalColorId = setInterval(() => {
    bodyRef.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)]; 
 }, 1000);
+    startBtn.disabled = true;
    
 }
 
 function StopSwitchColor() {
     clearInterval(intervalColorId);
+    startBtn.disabled = false;
 }
 
